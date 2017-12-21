@@ -1,7 +1,7 @@
 var app = require('express')();//expressを使うため
 var http = require('http').Server(app);//expressを使って通信を扱う
 var io = require('socket.io')(http);//socketを使うため
-var POST = 3000;//localhost:3000
+var POST = process.env.PORT || 8080
 
 //ルートディレクトリにアクセスした時に動く処理
 app.get('/', function(req, res) {
